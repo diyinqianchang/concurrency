@@ -44,7 +44,7 @@ public class Registry {
        final Subscribe subscribe = method.getDeclaredAnnotation(Subscribe.class);
         String topic = subscribe.topic();
         subscriberContainer.computeIfAbsent(topic,key->new ConcurrentLinkedQueue<>());
-        subscriberContainer.get(topic).add(new Subscriber(subscribe,method));
+        subscriberContainer.get(topic).add(new Subscriber(subscriber,method));
 
     }
 

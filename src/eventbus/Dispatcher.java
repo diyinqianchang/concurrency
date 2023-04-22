@@ -3,6 +3,7 @@ package eventbus;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 
 /**
@@ -41,7 +42,7 @@ public class Dispatcher {
                 .filter(subscriber -> {
                     Method subscribeMethod = subscriber.getSubscribeMethod();
                     Class<?> aClass = subscribeMethod.getParameterTypes()[0];
-                    return aClass.isAssignableFrom(event.getClass());
+                    return (aClass.isAssignableFrom(event.getClass()));
                 }).forEach(subscriber -> realInvokeSubscribe(subscriber,event,bus));
     }
 
