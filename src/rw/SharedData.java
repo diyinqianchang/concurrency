@@ -23,6 +23,9 @@ public class SharedData {
 
     public SharedData(int length) {
         this.length = length;
+        for (int i = 0; i < length; i++) {
+            container.add(i,'c');
+        }
     }
 
     public char[] read() throws InterruptedException{
