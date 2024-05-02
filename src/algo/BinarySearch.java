@@ -27,6 +27,7 @@ public class BinarySearch {
 
         while (low<=high){
             int mid = (low+high)>>>1;
+            System.out.println(mid);
             if (nums[mid] > val){
                 high=mid-1;
             }else if (nums[mid]<val){
