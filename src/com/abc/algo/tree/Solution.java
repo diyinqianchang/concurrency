@@ -237,6 +237,15 @@ public class Solution {
         depth--;
     }
 
+    int maxDepth2(TreeNode root){
+        if (root == null){
+            return 0;
+        }
+        int leftMax = maxDepth2(root.left);
+        int rightMax = maxDepth2(root.right);
+        return Math.max(leftMax,rightMax)+1;
+    }
+
 
 
 
@@ -303,8 +312,11 @@ public class Solution {
         root.right.left = new TreeNode(15);
         root.right.right = new TreeNode(7);
         Solution solution = new Solution();
-        int balanced = solution.minDepth(root,0);
-        System.out.println(balanced);
+//        int balanced = solution.minDepth(root,0);
+//        solution.traverse2( root);
+//        System.out.println(solution.res);
+//        System.out.println(solution.depth);
+        System.out.println(solution.levelOrder(root));
 
     }
 }
