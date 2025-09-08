@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class QuickSort {
 
-    private static void quickSort(int[] nums){
+    public static void quickSort(int[] nums){
         quickSort(nums,0,nums.length-1);
     }
     private static void quickSort(int[] nums,int low,int high){

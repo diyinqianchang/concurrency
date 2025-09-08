@@ -69,6 +69,38 @@ public class Solution {
         return result;
     }
 
+
+    public List<Long> sumOfLevels(TreeNode root) {
+        List<Long> result = new ArrayList<>();
+        if (root == null){
+            return result;
+        }
+        Queue<List<TreeNode>> queue = new LinkedList<>();
+        queue.add(Arrays.asList(root));
+        while (!queue.isEmpty()){
+            List<TreeNode> pollList = queue.poll();
+            long sum = 0;
+            List<TreeNode> offerList = new ArrayList<>();
+            for (TreeNode node : pollList) {
+                sum = sum+node.val;
+                if (node.left != null){
+                    offerList.add(node.left);
+                }
+                if (node.right != null){
+                    offerList.add(node.right);
+                }
+            }
+            if (!offerList.isEmpty()){
+                queue.offer(offerList);
+            }
+            result.add(sum);
+
+        }
+        result.sort(Comparator.comparingLong(Long::longValue).reversed());
+        return result;
+    }
+
+
     public List<List<Integer>> levelOrder2(TreeNode root) {
 
         List<List<Integer>> result = new ArrayList<>();
@@ -316,7 +348,7 @@ public class Solution {
 //        solution.traverse2( root);
 //        System.out.println(solution.res);
 //        System.out.println(solution.depth);
-        System.out.println(solution.levelOrder(root));
+        System.out.println(solution.sumOfLevels(root).get(0));
 
     }
 }
