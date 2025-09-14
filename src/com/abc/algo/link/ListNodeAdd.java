@@ -1,4 +1,4 @@
-package com.abc.algo;
+package com.abc.algo.link;
 
 /**
  * @Author Administrator
@@ -130,18 +130,42 @@ public class ListNodeAdd {
         return result;
     }
 
+    private static ListNode mergeTwoLists(ListNode l1,ListNode l2){
+        ListNode dummy = new ListNode(-1);
+        ListNode cur = dummy;
+        ListNode p1 = l1,p2 = l2;
+        while (p1!=null && p2!=null){
+            if (p1.val <= p2.val){
+                cur.next = p1;
+                p1 = p1.next;
+            }else {
+                cur.next = p2;
+                p2 = p2.next;
+            }
+            cur = cur.next;
+        }
+        cur.next = p1 == null ? p2:p1;
+        return dummy.next;
+    }
+
 
     public static void main(String[] args) {
 
         ListNode listNode = new ListNode(-1);
         ListNode curr = listNode;
         int[] num = {1,2,3,4,5};
+        ListNode listNode2 = new ListNode(-1);
+        ListNode curr2 = listNode2;
         for (int i = 0; i < num.length; i++) {
             curr.next = new ListNode(num[i]);
             curr = curr.next;
+            curr2.next = new ListNode(num[i]);
+            curr2 = curr2.next;
         }
-        ListNode head = reverseBetween(listNode.next,2,4);
-        forPrint(head);
+//        ListNode head = reverseBetween(listNode.next,2,4);
+//        forPrint(head);
+        ListNode listNode1 = mergeTwoLists(listNode.next, listNode2.next);
+        forPrint(listNode1);
 
 
     }

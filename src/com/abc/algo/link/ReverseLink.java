@@ -1,4 +1,4 @@
-package com.abc.algo;
+package com.abc.algo.link;
 
 /**
  * @Author Administrator
