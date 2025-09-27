@@ -80,8 +80,14 @@ public class AVLTree {
             return node;
         }
         updateHeight(node);
+        //旋转
         node = rotate(node);
         return node;
+    }
+
+
+    public void remove(int val){
+        root = removeHelper(root,val);
     }
 
     private TreeNode removeHelper(TreeNode node,int val){
@@ -126,6 +132,17 @@ public class AVLTree {
             }
         }
         return cur;
+    }
+
+    public static void main(String[] args) {
+        AVLTree tree = new AVLTree();
+        tree.insert(5);
+        tree.insert(6);
+        tree.insert(3);
+        tree.insert(4);
+        tree.insert(1);
+        tree.insert(0);
+        PrintTree.levelOrder(tree.root);
     }
 
 }
