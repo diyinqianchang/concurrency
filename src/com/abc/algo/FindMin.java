@@ -27,7 +27,7 @@ public class FindMin {
         int min = findMin(nums);
         System.out.println(min);
 
-//        System.out.println((0+11)>>>1);
+        System.out.println((0+11)>>>1);
     }
 
 }

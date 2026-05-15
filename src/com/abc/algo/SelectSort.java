@@ -22,9 +22,29 @@ public class SelectSort {
         }
     }
 
+    public static int[] sortArray(int[] nums) {
+        int n = nums.length;
+        int selectIndex = 0;
+        while (selectIndex < n){
+            int minIndex = selectIndex;
+            for (int i = selectIndex+1; i < n; i++) {
+                if (nums[i]<nums[minIndex]){
+                    minIndex = i;
+                }
+            }
+            int tmp = nums[selectIndex];
+            nums[selectIndex] = nums[minIndex];
+            nums[minIndex] = tmp;
+
+            selectIndex++;
+        }
+
+        return nums;
+    }
+
     public static void main(String[] args) {
         int[] nums = {1, 2, 7, 9, 5, 8};
-        selectionSort(nums);
-//        System.out.println(Arrays.toString(nums));
+        int[] ints = sortArray(nums);
+        System.out.println(Arrays.toString(ints));
     }
 }

@@ -22,7 +22,7 @@ public class ReverseLink {
         node3.next = node4;
         node4.next = node5;
         node5.next = node6;
-        traverse(node1);
+        traverse(reverseList(node1));
 //        System.out.println("翻转前...");
 //        printLink(node1);
 //        System.out.println("");

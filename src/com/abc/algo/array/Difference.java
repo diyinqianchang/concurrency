@@ -101,10 +101,10 @@ public class Difference {
         System.out.println(Arrays.toString(difference.result2()));
 //        System.out.println(Arrays.toString(difference.result()));
 //
-//        System.out.println(Arrays.toString(difference.corpFlightBookings(new int[][]{{1,2,10},{2,3,20},{2,5,25}}, 5)));
-        System.out.println(difference.carPooling(new int[][]{{2,1,5},{3,3,7}}, 4));
-        System.out.println(difference.carPooling(new int[][]{{2,1,5},{3,3,7}}, 5));
-        System.out.println(difference.carPooling(new int[][]{{9,0,1},{3,3,7}}, 4));
+        System.out.println(Arrays.toString(difference.corpFlightBookings(new int[][]{{1,2,10},{2,3,20},{2,5,25}}, 5)));
+//        System.out.println(difference.carPooling(new int[][]{{2,1,5},{3,3,7}}, 4));
+//        System.out.println(difference.carPooling(new int[][]{{2,1,5},{3,3,7}}, 5));
+//        System.out.println(difference.carPooling(new int[][]{{9,0,1},{3,3,7}}, 4));
     }
 
 }

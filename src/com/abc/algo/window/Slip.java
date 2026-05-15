@@ -155,13 +155,14 @@ public class Slip {
             char c = s.charAt(right);
             right++;
             map.put(c, map.getOrDefault(c, 0) + 1);
-
+            System.out.println(map);
             while (map.containsKey(c) && map.get(c) > 1){
                 char delete = s.charAt(left);
                 left++;
                 map.put(delete, map.getOrDefault(delete, 0) - 1);
             }
             res = Math.max(res, right - left);
+            System.out.println(s.substring(left,right));
         }
         return res;
     }
@@ -169,7 +170,8 @@ public class Slip {
 
     public static void main(String[] args) {
         Slip slip = new Slip();
-        System.out.println(slip.lengthOfLongestSubstring("pwwkew"));
+//        System.out.println(slip.lengthOfLongestSubstring("pwwkew"));
+        System.out.println(slip.findAnagrams("cbaebabacd", "abc"));
 
 //        System.out.println(slip.checkInclusion("ab", "eidbaooo"));
 //        System.out.println(slip.checkInclusion("kuzntqeuvaszrspkgjvxrupwxwrexztptsowceibeewxbslvosbobmyymikdscshybtmanuxeqtanrjekbwirmhgvfmzipfiqxcilarfyasoayepgfzmdytlpjymeaztsyubkbmblepwozffxiitdhwaquozlfmnascomqczrbhxcnzugppddtudxrigfeaozzojpeamnobapgwksudbiwdedvprwonmzardsodhxmkgghqzfhorjaijdvwzsnfpdfklwibbsnwqsoajcpjisbgizgttlnmclawbgnhbmtcpuusuammvgxnopdngclxumgfgwjrinamevhirpmlkwtyxkrmoffrreotdosjghsrkgxyiyrytbbofgczndgmdalyvvoljczcztxitxelywqemjigtuanubpstndwzvtiejtoqvetaehvcuujyupncumjnkesmoadzyvkwvjqgqewvvvpheyyvkewefbjjqzajxnhouodanyruqpzdcjmgnxkmhsgqjhpcyviewmrkfioudzqivmmguxjxuxdmpsmkwnvbxcomifgxqmcovlkooptjpfxjllwtlkkoaayzduodgsusaogswmoqkznynwiukkrrxzkwcknwlazxnlmghybxmyvquzbdqlpfydhnnuvlmyjmixyzso",

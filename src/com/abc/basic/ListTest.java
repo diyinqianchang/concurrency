@@ -13,9 +13,9 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ListTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        List<String> list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
         list.add("1");
 //        list.remove(0);
         LinkedList<String> linkedList = new LinkedList<>();
@@ -34,7 +34,14 @@ public class ListTest {
         System.out.println(10>>1);
 
         ArrayBlockingQueue<String> strings = new ArrayBlockingQueue<>(10);
+        strings.take();
+        strings.put("1");
         strings.poll();
+
+
+        LinkedBlockingQueue<String> strings2 = new LinkedBlockingQueue<>();
+        strings2.take();
+
 
         CopyOnWriteArrayList<String> strings1 = new CopyOnWriteArrayList<>();
         strings1.add("1");
@@ -73,6 +80,11 @@ public class ListTest {
         reentrantLock.lock();
         reentrantLock.unlock();
 //        reentrantLock.tryLock(1, TimeUnit.SECONDS);
+
+        ArrayList<String> arr = new ArrayList<>();
+        arr.add("1");
+        arr.add("2");
+
 
     }
 

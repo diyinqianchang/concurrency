@@ -6,15 +6,15 @@ package com.abc.algo.tree;
  * @Version 1.0
  */
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    int height;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public int height;
 
     TreeNode() {
     }
 
-    TreeNode(int val) {
+    public TreeNode(int val) {
         this.val = val;
     }
 

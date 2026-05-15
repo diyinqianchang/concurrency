@@ -2,6 +2,7 @@
 package com.abc.algo.heap;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MaxHeap {
@@ -83,6 +84,18 @@ public class MaxHeap {
             swap(i, ma);
             i = ma;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "MaxHeap{" +
+                "maxHeap=" + maxHeap +
+                '}';
+    }
+
+    public static void main(String[] args) {
+        MaxHeap maxHeap = new MaxHeap(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
+        System.out.println(maxHeap);
     }
 
 
